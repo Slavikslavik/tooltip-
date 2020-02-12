@@ -19,29 +19,27 @@
 	}
 	</style>
 <body>
-    <div class="box" title="don`t touch"></div> 
+    <div class="box"></div> 
     <script
 	  src="https://code.jquery.com/jquery-3.4.1.min.js"
 	  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 	  crossorigin="anonymous"></script>
 	<script>
-            $(function(){
-            ('.box').tooltip()
-            });
-            // let $container = $('.box');
-            // //console.log($container)
-            // $container.on({
-            //     mouseover : function (event) {
-            // const $tooltip = $('body').append('<div></div>');  
-            // //console.log($tooltip); 
-            // $tooltip.text($container.data('help'));
-            // $container.append($tooltip); 
-            // },
-
-            // mouseout: function (event) {
-            //     $('$container:first-child').remove();
-            // }
-            // })
+            
+            let $container = $('.box');
+            //console.log($container)
+            $container.mouseover(function handler(event) {
+              //alert('hello')
+              let $tooltip = $("<div></div>");
+              //console.log($tooltip);
+              $tooltip.text('don`t touch');
+              //console.log($tooltip);
+              $container.append($tooltip);
+            })
+            $container.mouseout(function (event) {
+              $("div :first-child").remove();
+              
+            })
         </script>
 </body>
 </html>
